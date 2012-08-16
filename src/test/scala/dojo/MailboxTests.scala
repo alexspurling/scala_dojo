@@ -50,4 +50,9 @@ class MailboxTests extends FunSuite with ShouldMatchers{
     response should equal ("Goodbye World")
   }
 
+  test("should return None when unknown message sent"){
+    val response = new MailBox().receive("unknown")
+    response should equal (None)
+  }
+
 }
